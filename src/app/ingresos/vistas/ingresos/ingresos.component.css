@@ -1,0 +1,34 @@
+.titulo{
+
+ color: gray;
+ border-bottom: solid 1px #dddddd;   
+ padding: 20px;
+ display: grid;
+ grid-template-columns: repeat(5,1fr);    
+}
+
+.contenido{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.opciones{
+ 
+    display: flex;
+    height: calc(100vh - 56px);
+    justify-content: center;
+    
+}
+
+.listado{
+    border-right:solid 1px #dddddd;
+}
+
+.detallestitulo{
+color: gray;
+display: flex;
+flex-direction: row-reverse;
+justify-content: baseline;
+padding: 25px;
+
+}

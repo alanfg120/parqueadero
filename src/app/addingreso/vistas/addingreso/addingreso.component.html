@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Nuevo Ingreso</h1>
+<form #form="ngForm" (ngSubmit)="SaveIngreso(form)">
+  <div mat-dialog-content>
+    <div class="form">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Placa"
+          [(ngModel)]="ingreso.placa"
+          name="placa"
+          required
+          #placa="ngModel"
+        />
+        <mat-error *ngIf="placa.errors?.required">
+            este campo es requerido
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Selecione el tipo de Vehiculo</mat-label>
+        <mat-select [(ngModel)]="ingreso.tipo" name="tipo" required #tipo="ngModel">
+          <mat-option value="moto">Moto</mat-option>
+          <mat-option value="carro">Carro</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipo.errors?.required">
+                este campo es requerido
+            </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button type="submit" cdkFocusInitial color="primary">
+      Guardar
+    </button>
+    <button mat-button>Cancelar</button>
+  </div>
+</form>
