@@ -32,3 +32,18 @@ justify-content: baseline;
 padding: 25px;
 
 }
+
+.listaingresos{
+ font-size: 15px;
+ padding: 17px;
+ display: grid;
+ grid-template-columns: repeat(5,1fr);    
+
+}
+
+.loading{
+    height: calc(100vh - 56px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

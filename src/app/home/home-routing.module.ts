@@ -9,7 +9,7 @@ const routes: Routes = [
   component:HomeComponent,
   children:[
     {
-      path:'',
+      path:'ingresos',
       loadChildren:"./../ingresos/ingresos.module#IngresosModule"
     }
   ]

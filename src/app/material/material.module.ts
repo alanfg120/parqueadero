@@ -20,7 +20,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import {MatMenuModule} from '@angular/material/menu';
 import {MatBadgeModule} from '@angular/material/badge';
-
+import {MatChipsModule} from '@angular/material/chips';
 import {
   MomentDateModule,
   MomentDateAdapter
@@ -30,7 +30,8 @@ import {
   MAT_DATE_FORMATS,
   MAT_DATE_LOCALE,
   MatPaginatorModule,
-  MatSortModule
+  MatSortModule,
+  MatSnackBarModule
 } from "@angular/material";
 
 import { MatDialogModule } from "@angular/material/dialog";
@@ -77,7 +78,9 @@ export const MY_FORMATS = {
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatCheckboxModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSnackBarModule,
+    MatChipsModule
   ],
   providers:[ { provide: MAT_DATE_LOCALE, useValue: "es-ES" },
   {

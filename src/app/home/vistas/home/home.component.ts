@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { AddingresoComponent } from '../../../addingreso/vistas/addingreso/addingreso.component';
+import { Store } from '@ngrx/store';
+import { Ingreso } from 'src/app/ingresos/models/IngresoClass';
+import { buscarIngreso } from '../../../ingresos/actions/ingresos.actions';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +12,7 @@ import { AddingresoComponent } from '../../../addingreso/vistas/addingreso/addin
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,private store: Store<{ ingreso: Ingreso[] }>) { }
 
   ngOnInit() {
   }
@@ -21,11 +24,9 @@ export class HomeComponent implements OnInit {
       data: {}
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-     
-    });
   }
-
+  buscar(text){
+    this.store.dispatch(buscarIngreso({query:text}))
+  }
 }
 

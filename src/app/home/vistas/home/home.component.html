@@ -7,7 +7,7 @@
     Menu
   </span>
   <div class="input-icono">
-    <input type="text" placeholder="Buscar" class="inputbuscar" />
+    <input type="text" placeholder="Buscar" class="inputbuscar" (keyup)="buscar(text.value)" #text />
   </div>
 
   <span class="example-spacer"></span>

@@ -7,11 +7,42 @@
       <div>tipo de Vehiculo</div>
       <div>Total</div>
     </div>
+    <div class="loading" *ngIf="isloading$ | async">
+      <mat-spinner diameter="50"></mat-spinner>
+    </div>
+
+    <div *ngFor="let ingreso of ingresos$ | async" class="listaingresos">
+      <div>
+        {{ ingreso.placa }}
+      </div>
+      <div>
+        {{ ingreso.horaEntrada | datepipe }}
+      </div>
+      <div>
+        <mat-chip-list *ngIf="!ingreso.horaSalida">
+          <mat-chip
+            color="primary"
+            selected
+            
+            (click)="getTotal(ingreso.horaEntrada, ingreso._id, ingreso.tarifa)"
+            >Salida</mat-chip
+          >
+        </mat-chip-list>
+
+        {{ ingreso.horaSalida | datepipe }}
+      </div>
+      <div>
+        {{ ingreso.tipo }}
+      </div>
+      <div>
+        {{ ingreso.total }}
+      </div>
+    </div>
   </div>
   <div class="opciones">
     <div class="detallestitulo">
-        <mat-icon>error_outline</mat-icon>
-        <div style="margin-top: 3px; margin-right: 4px;">Detalles Del Dia</div>
+      <mat-icon>error_outline</mat-icon>
+      <div style="margin-top: 3px; margin-right: 4px;">Detalles Del Dia</div>
     </div>
   </div>
 </div>

@@ -1,21 +1,21 @@
 import * as moment from "moment";
+import { Moment } from 'moment';
 
 export class Ingreso {
+  public _id:string
   public placa: string;
-  public horaEntrada: string;
-  public horaSalida: string;
+  public horaEntrada: Moment;
+  public horaSalida: Moment;
   public tipo: string;
   public total: number;
+  public tarifa: number;
 
   getHoraIngreso() {
-    this.horaEntrada = moment().format("hh:mm A");
+    this.horaEntrada = moment()
   }
   getHoraSalida() {
-    this.horaSalida = moment().format("hh:mm A");
+    this.horaSalida = moment()
   }
 
-  getTotal(horaSalida, horaEntrada) {
-    let total = moment.duration(horaEntrada - horaSalida).humanize();
-    this.total = parseInt(total);
-  }
+  
 }

@@ -12,25 +12,44 @@
           #placa="ngModel"
         />
         <mat-error *ngIf="placa.errors?.required">
-            este campo es requerido
+          este campo es requerido
         </mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Selecione el tipo de Vehiculo</mat-label>
-        <mat-select [(ngModel)]="ingreso.tipo" name="tipo" required #tipo="ngModel">
+        <mat-select
+          [(ngModel)]="ingreso.tipo"
+          name="tipo"
+          required
+          #tipo="ngModel"
+        >
           <mat-option value="moto">Moto</mat-option>
           <mat-option value="carro">Carro</mat-option>
         </mat-select>
         <mat-error *ngIf="tipo.errors?.required">
-                este campo es requerido
-            </mat-error>
+          este campo es requerido
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Tarifa"
+          [(ngModel)]="ingreso.tarifa"
+          name="tarifa"
+          required
+          #tarifa="ngModel"
+          type="number"
+        />
+        <mat-error *ngIf="tarifa.errors?.required">
+          este campo es requerido
+        </mat-error>
       </mat-form-field>
     </div>
   </div>
   <div mat-dialog-actions>
-    <button mat-raised-button type="submit" cdkFocusInitial color="primary">
+    <button mat-raised-button type="submit"  color="primary">
       Guardar
     </button>
-    <button mat-button>Cancelar</button>
+    <button mat-button type="button" [mat-dialog-close]>Cancelar</button>
   </div>
 </form>
