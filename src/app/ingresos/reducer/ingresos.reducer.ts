@@ -45,9 +45,10 @@ const _ingresosReducer = createReducer(
         }
       };
     else
+      initialproductos = state.ingresos.concat(action.ingreso).reverse()
       return {
         ...state,
-        ingresos: state.ingresos.concat(action.ingreso).reverse(),
+        ingresos: initialproductos,
         ingresoPendiente: {
           ingreso: action.ingreso,
           pendiente: "ok"
@@ -57,7 +58,7 @@ const _ingresosReducer = createReducer(
 
   on(buscarIngreso, (state, action) => {
 
-    if (action.query == "") return { ...state, ingresos: initialproductos.reverse() };
+    if (action.query == "") return { ...state, ingresos: initialproductos };
     else
       return {
         ...state,

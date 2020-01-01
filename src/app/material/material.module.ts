@@ -21,6 +21,7 @@ import { MatProgressBarModule } from "@angular/material/progress-bar";
 import {MatMenuModule} from '@angular/material/menu';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import {
   MomentDateModule,
   MomentDateAdapter
@@ -80,7 +81,8 @@ export const MY_FORMATS = {
     MatCheckboxModule,
     MatBadgeModule,
     MatSnackBarModule,
-    MatChipsModule
+    MatChipsModule,
+    MatTooltipModule
   ],
   providers:[ { provide: MAT_DATE_LOCALE, useValue: "es-ES" },
   {

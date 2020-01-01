@@ -23,7 +23,6 @@
           <mat-chip
             color="primary"
             selected
-            
             (click)="getTotal(ingreso.horaEntrada, ingreso._id, ingreso.tarifa)"
             >Salida</mat-chip
           >
@@ -37,6 +36,14 @@
       <div>
         {{ ingreso.total }}
       </div>
+      <button mat-icon-button matTooltip="Eliminar">
+        <mat-icon class="delete">delete</mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="Editar" >
+        <mat-icon class="edit">edit</mat-icon>
+      </button>
+
+
     </div>
   </div>
   <div class="opciones">
